@@ -1,6 +1,6 @@
 import pygame.draw
 
-from main.constants import INT_WINDOW_WIDTH, INT_WINDOW_HEIGHT, COLOR_BLUE
+from main.utils.constants import INT_WINDOW_WIDTH, INT_WINDOW_HEIGHT, COLOR_BLUE
 
 
 class Snake:

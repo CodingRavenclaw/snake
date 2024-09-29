@@ -1,20 +1,15 @@
-from random import randint
-
 import pygame.draw
 
-from main.constants import INT_WINDOW_WIDTH, INT_BLOCK_SIZE, INT_WINDOW_HEIGHT
+from main.utils.constants import INT_BLOCK_SIZE
+
 
 class Food:
-  def __init__(self, str_name, col_color, int_points):
+  def __init__(self, str_name, col_color, int_points, int_block_size, tpl_position):
     self.str_name = str_name
     self.col_color = col_color
     self.int_points = int_points
-    self.tpl_position = self.generate_random_position()
-
-  def generate_random_position(self):
-    int_x = randint(0, (INT_WINDOW_WIDTH - INT_BLOCK_SIZE) // INT_BLOCK_SIZE) * INT_BLOCK_SIZE
-    int_y = randint(0, (INT_WINDOW_HEIGHT - INT_BLOCK_SIZE) // INT_BLOCK_SIZE) * INT_BLOCK_SIZE
-    return int_x, int_y
+    self.int_block_size = int_block_size
+    self.tpl_position = tpl_position
 
   def draw(self, a_screen, a_col_color):
     pygame.draw.rect(a_screen, a_col_color, pygame.Rect(
